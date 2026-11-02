@@ -31,7 +31,7 @@
 .home-heading{display:flex;align-items:center;justify-content:space-between;padding:10px 0 18px}.home-heading .page-title{margin:7px 0 4px}.goal-card{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#171914;color:#fff;border-radius:25px;padding:20px;margin:3px 0 20px;overflow:hidden}.goal-copy{min-width:0;flex:1}.goal-card .eyebrow{color:#c5c9bc}.goal-card h2{font-size:22px;letter-spacing:-.04em;margin:8px 0 4px}.goal-card p{font-size:12px;color:#c5c9bc;margin:0 0 15px}.goal-dots{display:grid;grid-template-columns:repeat(7,13px);gap:6px;margin:0 0 8px}.goal-dots i{width:13px;height:13px;border-radius:50%;background:#484b43}.goal-dots i.filled{background:#9baa77}.goal-dots i.current{box-shadow:0 0 0 2px #fff}.goal-caption{font-size:8px;letter-spacing:.12em;color:#c5c9bc}.goal-ring{--goal-progress:0%;width:83px;height:83px;flex:0 0 83px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#a3b37c var(--goal-progress),#45483f var(--goal-progress))}.goal-ring>div{width:67px;height:67px;border-radius:50%;background:#171914;display:grid;align-content:center;justify-items:center}.goal-ring strong{font-size:19px;line-height:1}.goal-ring span{font-size:9px;color:#c5c9bc;margin-top:3px}.week-overview{margin-bottom:10px}.week-day .week-dot{display:block;width:5px;height:5px;border-radius:50%;margin:5px auto 0;background:transparent}.week-day.done .week-dot{background:var(--olive)}.week-day.today.done .week-dot{background:#fff}.home-metrics{grid-template-columns:repeat(2,minmax(0,1fr));margin:18px 0 4px}.home-metrics .metric{padding:14px;border-radius:19px}.home-metrics .metric strong{font-size:23px}.home-metrics .metric em{font-size:9px}.history-heading{padding:11px 0 18px}.history-heading .page-title{margin:7px 0 5px}.history-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--olive-pale);border:1px solid #dce3cf;border-radius:22px;padding:17px;margin-bottom:23px}.history-summary-main{display:grid;gap:4px}.history-summary-main .eyebrow{color:var(--olive-dark)}.history-summary-main strong{font-size:25px;line-height:1.1;letter-spacing:-.04em}.history-summary-main strong small{font-size:13px;letter-spacing:0;font-weight:600}.history-summary-main>span:last-child{color:var(--muted);font-size:11px}.activity-chart{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;align-items:end;padding:17px 14px 12px}.chart-day{display:grid;justify-items:center;gap:5px;font-size:10px;color:var(--muted)}.chart-day b{font-size:10px;color:var(--ink)}.chart-bar-wrap{height:78px;width:min(100%,27px);display:flex;align-items:end;justify-content:center;background:#f0f1ed;border-radius:99px;overflow:hidden}.chart-bar-wrap i{display:block;width:100%;border-radius:99px 99px 5px 5px;background:#e0e3da}.chart-bar-wrap i.has-activity{background:var(--olive)}.history-tabs button{padding:9px 14px}@media(max-width:380px){.goal-card{padding:16px;gap:10px}.goal-ring{width:70px;height:70px;flex-basis:70px}.goal-ring>div{width:56px;height:56px}.goal-dots{grid-template-columns:repeat(7,11px);gap:5px}.goal-dots i{width:11px;height:11px}}
 
 
-:root{--bg:#0d0f0d;--paper:#171a17;--ink:#f5f5ef;--muted:#a5aaa0;--olive:#c6dda1;--olive-dark:#b3ce8b;--olive-pale:#252d22;--line:#30352e;--soft:#222720;--orange:#ffc4ac;--pastel-lilac:#ddc5ff;--pastel-mint:#b8ebcf;--pastel-blue:#b9dcff;--pastel-pink:#ffc5da}
+:root{--bg:#050505;--paper:#141414;--ink:#f8f8f5;--muted:#a8a8a8;--olive:#ff9fca;--olive-dark:#ffc0dc;--olive-pale:#2b1d25;--line:#292929;--soft:#202020;--orange:#ffc39e;--pastel-lilac:#d8c2ff;--pastel-mint:#b6efbd;--pastel-blue:#afd4ff;--pastel-pink:#ff9fca;--pastel-red:#ffa6ad;--pastel-orange:#ffc39e;--pastel-yellow:#f4ed8d}
 html,body{background:var(--bg);color:var(--ink)}
 .card,.metric,.plan-card,.activity,.empty-state,.auth-card{background:var(--paper);border-color:var(--line);color:var(--ink)}
 .auth-card{box-shadow:0 18px 55px #0008}.auth-card p,.page-sub,.plan-info span,.activity-copy span,.exercise-copy span{color:var(--muted)}
@@ -94,6 +94,87 @@ html,body{background:var(--bg);color:var(--ink)}
 .exercise-card:nth-child(4n+2) .exercise-number{background:#3a3025;color:var(--pastel-orange)}
 .exercise-card:nth-child(4n+3) .exercise-number{background:#3a3422;color:var(--pastel-yellow)}
 .exercise-card:nth-child(4n+4) .exercise-number{background:#3a2931;color:var(--pastel-pink)}
+/* Palette inspired by the supplied reference: clear black surfaces, pastel signals. */
+html,body{background:#050505}
+.app{background:transparent}
+.card,.metric,.plan-card,.activity,.empty-state,.auth-card,.sheet,.session-progress-card,.session-details-card,.exercise-card{background:#141414;border-color:#292929;color:var(--ink)}
+.auth-card{border-color:#303030}
+.page-title,.section-title h2,.exercise-copy b,.plan-info b,.activity-copy b,.today-main b{color:#f8f8f5}
+.eyebrow{color:#a8a8a8}
+.goal-card{background:#050505;border:1px solid #292929;color:#fff}
+.goal-card .eyebrow,.goal-card h2{color:var(--pastel-yellow)}
+.goal-card p,.goal-caption{color:#b9b9b9}
+.goal-dots i{background:#303030}
+.goal-dots i.filled{background:var(--pastel-pink)}
+.goal-dots i.current{box-shadow:0 0 0 2px #fff}
+.goal-ring{background:conic-gradient(var(--pastel-pink) var(--goal-progress),#333 var(--goal-progress))}
+.goal-ring>div{background:#050505}
+.goal-ring strong{color:var(--pastel-pink)}
+.week-day.today b{background:var(--pastel-pink);color:#141014}
+.week-day.done b{box-shadow:inset 0 0 0 2px var(--pastel-mint);color:var(--pastel-mint)}
+.week-day.today.done b{background:var(--pastel-mint);color:#101510}
+.home-metrics .metric:nth-child(4n+1) strong{color:var(--pastel-mint)}
+.home-metrics .metric:nth-child(4n+2) strong{color:var(--pastel-blue)}
+.home-metrics .metric:nth-child(4n+3) strong{color:var(--pastel-yellow)}
+.home-metrics .metric:nth-child(4n+4) strong{color:var(--pastel-pink)}
+.metric em{color:#bdbdbd}
+.button.olive,.button.full:not(.light):not(.outline),.training-shortcuts .button:first-child{background:var(--pastel-pink);border-color:var(--pastel-pink);color:#21131b;font-weight:800}
+.button:not(.olive):not(.full){background:#171717;border:1px solid #3a3a3a;color:var(--ink)}
+.button.outline{background:#111;border-color:#4a4a4a;color:var(--pastel-blue)}
+.button.light{background:#191919;color:var(--pastel-mint)}
+.training-shortcuts .button:last-child{background:#171717;border-color:var(--pastel-orange);color:var(--pastel-orange)}
+.tabs button.active{background:var(--pastel-pink);border-color:var(--pastel-pink);color:#20121a}
+.tag{background:#222;color:#d4d4d4}
+.tag.olive{background:#33222b;color:var(--pastel-pink)}
+.progress-line{background:#303030}
+.progress-line i{background:var(--pastel-mint)}
+.today-icon,.activity-icon,.plan-art{background:#1b1b1b;color:var(--pastel-pink)}
+.plan-list .plan-card:nth-child(4n+1) .plan-art{background:#2c2027;color:var(--pastel-pink)}
+.plan-list .plan-card:nth-child(4n+2) .plan-art{background:#202731;color:var(--pastel-blue)}
+.plan-list .plan-card:nth-child(4n+3) .plan-art{background:#2a2920;color:var(--pastel-yellow)}
+.plan-list .plan-card:nth-child(4n+4) .plan-art{background:#1e2b22;color:var(--pastel-mint)}
+.activity-list .activity:nth-child(4n+1) .activity-icon{background:#2a2920;color:var(--pastel-yellow)}
+.activity-list .activity:nth-child(4n+2) .activity-icon{background:#2c2027;color:var(--pastel-pink)}
+.activity-list .activity:nth-child(4n+3) .activity-icon{background:#202731;color:var(--pastel-blue)}
+.activity-list .activity:nth-child(4n+4) .activity-icon{background:#1e2b22;color:var(--pastel-mint)}
+.exercise-card:nth-child(4n+1) .exercise-number{background:#2c2027;color:var(--pastel-pink)}
+.exercise-card:nth-child(4n+2) .exercise-number{background:#202731;color:var(--pastel-blue)}
+.exercise-card:nth-child(4n+3) .exercise-number{background:#2a2920;color:var(--pastel-yellow)}
+.exercise-card:nth-child(4n+4) .exercise-number{background:#1e2b22;color:var(--pastel-mint)}
+.score-ring{background:conic-gradient(var(--pastel-pink) var(--score),#333 var(--score))}
+.score-ring i{background:#080808;color:#fff}
+.scale-row button{background:#101010;border-color:#353535;color:#c2c2c2}
+.scale-row [data-scale="sleepQuality"].active{background:var(--pastel-yellow);border-color:var(--pastel-yellow);color:#211d12}
+.scale-row [data-scale="energy"].active{background:var(--pastel-pink);border-color:var(--pastel-pink);color:#281722}
+.scale-row [data-scale="fatigue"].active{background:var(--pastel-orange);border-color:var(--pastel-orange);color:#281a12}
+.scale-row [data-scale="stress"].active{background:var(--pastel-red);border-color:var(--pastel-red);color:#291616}
+.rpe-scale button{background:#151515;color:#aaa;border-color:#343434}
+.rpe-scale button.active{background:var(--pastel-lilac);border-color:var(--pastel-lilac);color:#1d1428}
+.set-check{background:#262626;color:#c9c9c9}
+.set-check.done{background:var(--pastel-mint);color:#131813}
+.exercise-card .set-check.done{background:var(--pastel-mint);color:#131813}
+.add-set-button{color:var(--pastel-blue)}
+.session-progress-card,.session-details-card{background:#131313;border-color:#2c2c2c}
+.progress-line i,.chart-bar-wrap i.has-activity{background:var(--pastel-pink)}
+.history-summary{background:#171717;border-color:#333}
+.history-summary-main .eyebrow{color:var(--pastel-yellow)}
+.chart-bar-wrap{background:#252525}
+.chart-bar-wrap i{background:#373737}
+.chart-day:nth-child(4n+1) .chart-bar-wrap i.has-activity{background:var(--pastel-pink)}
+.chart-day:nth-child(4n+2) .chart-bar-wrap i.has-activity{background:var(--pastel-blue)}
+.chart-day:nth-child(4n+3) .chart-bar-wrap i.has-activity{background:var(--pastel-yellow)}
+.chart-day:nth-child(4n+4) .chart-bar-wrap i.has-activity{background:var(--pastel-mint)}
+.bottom-nav{background:#080808f5;border-color:#303030}
+.bottom-nav button{color:#929292}
+.bottom-nav button.active{color:var(--pastel-pink)}
+.bottom-nav button.active i{background:#2c2027}
+.icon-btn{background:#151515;border-color:#353535;color:var(--ink)}
+.auth-field input,.field input,.field select,.field textarea,.stepper,.set-row input{background:#0a0a0a;border-color:#353535;color:#f7f7f7;color-scheme:dark}
+.steps-card{background:linear-gradient(130deg,#21171d,#101010 78%);border-color:#3a2933}
+.steps-icon{background:var(--pastel-mint);color:#111}
+.steps-copy .eyebrow{color:var(--pastel-mint)}
+.empty-state{border-color:#3a3a3a}
+.toast{background:#f8f8f5;color:#101010}
 </style>
 </head>
 <body>
