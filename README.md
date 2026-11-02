@@ -30,10 +30,7 @@ La tabla `training_data` y sus políticas RLS están configuradas para que cada 
 
 La confirmación de email sigue activada en Supabase. Las cuentas que crees manualmente deben marcarse como confirmadas (con **Auto Confirm User**). Si alguien olvida su contraseña, por ahora vas a tener que restablecerla desde **Authentication → Users**; el envío de recuperación por correo requiere configurar SMTP. El SMTP no está configurado y no hace falta para crear cuentas manualmente.
 
-La URL del sitio está configurada en Supabase:
-
-- Sitio: `https://toan-training.github.io/hyrox-training-system/`
-- Proveedor de acceso: correo y contraseña.
+La cuenta de GitHub ya se renombró y el sitio usará `https://toan-training.github.io/hyrox-training-system/`. En Supabase, revisá **Authentication → URL Configuration** y actualizá **Site URL** a esa dirección. Si se usan enlaces web de autenticación, agregá también esa dirección a **Redirect URLs**, conservando `hyroxtraining://auth-callback` para la app iOS. El inicio de sesión web actual usa correo y contraseña.
 
 ## Datos y privacidad
 
