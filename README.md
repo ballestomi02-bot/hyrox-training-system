@@ -27,7 +27,7 @@ En Supabase están habilitados el registro abierto por correo y contraseña y la
 - Registro abierto: cualquier persona con el enlace puede crear una cuenta.
 - Al registrarse, cada persona debe confirmar su correo antes de iniciar sesión.
 
-Para probarlo, abrí el sitio principal y elegí **Crear cuenta**. Si el correo de confirmación no llega o el envío se limita, configurá un proveedor SMTP propio en Supabase, en **Authentication → SMTP Settings**.
+La confirmación de correo está activada. El SMTP predeterminado de Supabase solo envía mensajes a integrantes de la organización y tiene un límite bajo; para que tus amigos puedan registrarse, primero hay que conectar un proveedor SMTP propio en **Authentication → SMTP Settings**. No pegues sus credenciales en GitHub ni en el código. Cuando el SMTP esté configurado, abrí el sitio principal y elegí **Crear cuenta**; cada persona confirma su correo y después inicia sesión.
 
 ## Datos y privacidad
 
