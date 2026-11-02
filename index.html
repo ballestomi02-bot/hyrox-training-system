@@ -37,8 +37,8 @@
 <script>
 const PREVIEW=new URLSearchParams(location.search).get('preview')==='1';
 const KEY=PREVIEW?'hyrox-training-demo-v1':'hyrox-training-system-v1';
-const SUPABASE_URL='https://TU-PROYECTO.supabase.co';
-const SUPABASE_ANON_KEY='TU-PUBLISHABLE-KEY';
+const SUPABASE_URL='https://sfftnwlxnexxwtwhnnym.supabase.co';
+const SUPABASE_ANON_KEY='sb_publishable_Ib4u5hmO6Pmg_51OVTegiA_wOtAxh5P';
 const configured=SUPABASE_URL.startsWith('https://')&&!SUPABASE_URL.includes('TU-PROYECTO')&&!SUPABASE_ANON_KEY.includes('TU-PUBLISHABLE-KEY');
 const plans=[
 {id:'starter',name:'HYROX desde cero',category:'HYROX',level:'Inicial',weeks:6,days:3,tag:'Primer HYROX',icon:'◉',blurb:'Construí base aeróbica y aprendé las estaciones sin apurarte.',sessions:[{name:'Base + técnica',kind:'HYROX',duration:40,exercises:[['Trote suave','12 min',0],['Remo','3 × 300 m',0],['Farmer carry','3 × 30 m',0],['Sentadilla goblet','3 × 10',0]]},{name:'Fuerza total',kind:'Fuerza',duration:45,exercises:[['Sentadilla','3 × 8',0],['Press de pecho','3 × 8',0],['Peso muerto rumano','3 × 8',0],['Remo con mancuerna','3 × 10',0]]},{name:'Carrera fácil',kind:'Running',duration:35,exercises:[['Trote cómodo','25 min',0],['Movilidad','10 min',0]]}]},
