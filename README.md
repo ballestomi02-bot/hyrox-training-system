@@ -1,44 +1,40 @@
-# HYROX Training System
+# HYROX Training
 
-Aplicación web mobile-first para HYROX, fuerza y running, publicada como sitio estático en GitHub Pages.
+App de entrenamiento mobile-first para HYROX, fuerza y running. La interfaz combina una pantalla de progreso semanal, un registro de sesión centrado en ejercicios y series, e historial visual de actividad. El idioma es español; el nombre se mantiene temporalmente.
 
-## Funciones
+## Qué incluye
 
-- Dashboard y plan semanal.
-- Registro e historial de sesiones y check-ins de recuperación.
-- Cuenta con correo y contraseña mediante Supabase Auth.
-- Sincronización entre dispositivos en PostgreSQL.
-- Privacidad por usuario mediante Row Level Security (RLS).
+- Inicio con actividad semanal, sesiones recientes, distancia y minutos.
+- Catálogo inicial de programas para HYROX desde cero, motor HYROX, preparación individual, dobles, running 5K y fuerza base.
+- Selección de un programa activo y acceso a sus sesiones semanales.
+- Editor para armar y guardar entrenamientos propios con ejercicios, series y repeticiones.
+- Modo de sesión con carga/repeticiones por serie, marcas de series completadas, RPE, tiempo y distancia para running.
+- Historial visual con resumen semanal y filtros por HYROX, running y fuerza.
+- Check-ins de recuperación para sueño, energía, fatiga, estrés y molestias.
+- Cuentas y sincronización privada con Supabase Auth + Postgres RLS (requiere configuración; ver abajo).
 
-## Configurar Supabase (requerido para activar cuentas)
+La presentación aplica ideas habituales de apps de entrenamiento como programas por objetivo, seguimiento de ejercicios/series y un calendario visual de actividad. El diseño propio usa fondo claro, tipografía negra y acentos verde oliva.
+
+## Configurar Supabase (requerido para cuentas y nube)
 
 1. Creá un proyecto en [Supabase](https://supabase.com/dashboard).
 2. En **SQL Editor**, ejecutá el contenido de `supabase/schema.sql`.
 3. En **Project Settings → API**, copiá la Project URL y la publishable key (o legacy anon key). Nunca uses la service_role/secret key en el navegador.
 4. En `index.html`, reemplazá `SUPABASE_URL` y `SUPABASE_ANON_KEY` por esos dos valores públicos.
-5. En **Authentication → URL Configuration**, agregá la URL de GitHub Pages a Site URL y Redirect URLs: `https://ballestomi02-bot.github.io/hyrox-training-system/`.
-6. En **Authentication → Providers → Email**, habilitá email/password. Para validar el registro, dejá activada la confirmación de correo y configurá el proveedor SMTP de producción; el correo de prueba integrado de Supabase tiene límites.
-7. Guardá y publicá `index.html` en GitHub Pages. La pantalla de registro/login se habilita al cargar la URL y la clave. Mientras haya placeholders, la app informa que falta configuración.
+5. En **Authentication → URL Configuration**, agregá `https://ballestomi02-bot.github.io/hyrox-training-system/` en Site URL y Redirect URLs.
+6. En **Authentication → Providers → Email**, habilitá email/password. Para validar registros en producción, configurá SMTP.
+7. Publicá `index.html` en GitHub Pages. Con los placeholders actuales, registro e inicio de sesión permanecen deshabilitados.
 
-El registro es abierto por defecto: cualquiera con el enlace puede crear una cuenta. Para limitarlo a amigos, desactivá **Authentication → Settings → Allow new users to sign up** y creá/invitá usuarios desde el panel de Supabase.
+El registro es abierto por defecto: quien tenga el enlace puede crear una cuenta. Para invitar solo a amigos, desactivá **Allow new users to sign up** en Authentication Settings y administrá las cuentas desde Supabase.
 
-## Datos y migración
+## Datos y privacidad
 
-La tabla `training_data` guarda el estado de cada usuario en una fila, protegida por políticas RLS que comparan `auth.uid()` con `user_id`. Un usuario autenticado solo puede leer y modificar su propia fila. No hay clave de servicio ni secreto en el frontend.
+La tabla `training_data` almacena el estado de cada usuario en una fila con políticas RLS que requieren que `auth.uid()` coincida con `user_id`. No hay clave de servicio ni secreto en el frontend. El progreso antiguo del navegador se importa al iniciar sesión si la cuenta aún no tiene datos en la nube.
 
-Al primer inicio de sesión, los datos legacy del navegador se importan si esa cuenta todavía no tiene datos en la nube. Tras una importación correcta, la copia legacy local se elimina para evitar que otra cuenta en el mismo navegador importe esos registros. Si ya hay datos en la nube, se usan esos datos.
+## Instalar en iPhone mientras se prepara App Store
 
-## Uso local
+La versión web puede agregarse desde Safari con **Compartir → Agregar a pantalla de inicio**. Eso crea un acceso de pantalla de inicio; no es una descarga de App Store. Para publicar en App Store hay que empaquetar esta app para iOS, compilarla en macOS en la nube y completar el proceso de Apple Developer.
 
-Abrí la app desde GitHub Pages o servila en localhost con un servidor estático. Abrir el archivo directamente puede impedir que el módulo de Supabase cargue.
+## Referencias de producto
 
-## Instalar en iPhone
-
-La app se puede agregar a la pantalla de inicio desde Safari; no hace falta Mac ni App Store para usarla de esta manera:
-
-1. Abrí `https://ballestomi02-bot.github.io/hyrox-training-system/` en Safari del iPhone.
-2. Tocá **Compartir**.
-3. Elegí **Agregar a pantalla de inicio** y confirmá **Agregar**.
-
-Se abrirá en una ventana propia y tendrá el ícono de HYROX. La primera carga necesita conexión. La app conserva un shell básico en caché, pero iniciar sesión y sincronizar entrenamientos requiere internet.
-
+Las funciones generales se inspiraron en patrones publicados por [Nike Training Club](https://www.nike.com/help/a/ntc-info/app), [Hevy](https://www.hevyapp.com/features/track-exercises/) y el [Training Log de Strava](https://support.strava.com/en-us/articles/15402077-training-log). No se reutilizan sus marcas ni recursos visuales.
