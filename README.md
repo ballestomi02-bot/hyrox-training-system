@@ -1,1 +1,1 @@
-# hyrox-training-system
+# hyrox
