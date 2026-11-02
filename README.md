@@ -5,8 +5,8 @@ App de entrenamiento mobile-first para HYROX, fuerza y running. La interfaz comb
 ## Qué incluye
 
 - Inicio con actividad semanal, sesiones recientes, distancia y minutos.
-- Catálogo inicial de programas para HYROX desde cero, motor HYROX, preparación individual, dobles, running 5K y fuerza base.
-- Selección de un programa activo y acceso a sus sesiones semanales.
+- Catálogo inicial de programas para HYROX desde cero, motor HYROX, preparación individual, dobles, running 5K, fuerza base y running progresivo combinado con fuerza (base 5K).
+- Selección de un programa activo y acceso a sus sesiones semanales. La rutina de running + fuerza conserva el SBD y deja los días de fuerza abiertos para registrar tu programación.
 - Editor para armar y guardar entrenamientos propios con ejercicios, series y repeticiones.
 - Modo de sesión con carga/repeticiones por serie, marcas de series completadas, RPE, tiempo y distancia para running.
 - Historial visual con resumen semanal y filtros por HYROX, running y fuerza.
