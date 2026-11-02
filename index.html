@@ -75,6 +75,25 @@ html,body{background:var(--bg);color:var(--ink)}
 @media(max-width:390px){.training-shortcuts{grid-template-columns:1fr}.rpe-scale{gap:3px}.rpe-scale button{height:31px;font-size:10px}.exercise-card{padding:12px}.exercise-card .set-head,.exercise-card .set-row{grid-template-columns:31px minmax(0,1fr) minmax(0,1fr) 32px}}
 
 .steps-card{display:flex;align-items:center;gap:14px;padding:16px 17px;border-radius:21px;background:linear-gradient(130deg,#252f24,#171a17 75%);border:1px solid #394534;margin:14px 0}.steps-icon{width:46px;height:46px;flex:0 0 46px;border-radius:16px;background:var(--pastel-mint);color:#162017;display:grid;place-items:center;font-size:23px}.steps-copy{flex:1;min-width:0}.steps-copy .eyebrow{color:var(--pastel-mint)}.steps-count{font-size:25px;font-weight:780;letter-spacing:-.05em;line-height:1.1;margin-top:4px}.steps-copy p{font-size:11px;color:var(--muted);margin:5px 0 0}.steps-card .button{flex:0 0 auto}
+:root{--pastel-red:#ffb7b2;--pastel-orange:#ffd0ae;--pastel-pink:#ffc5da;--pastel-yellow:#ffe89b}
+.training-shortcuts .button:first-child{background:var(--pastel-pink);border-color:var(--pastel-pink);color:#24161d}
+.training-shortcuts .button:last-child{background:var(--pastel-orange);border-color:var(--pastel-orange);color:#251a14}
+.plan-list .plan-card:nth-child(4n+1) .plan-art{background:#3a2b29;color:var(--pastel-red)}
+.plan-list .plan-card:nth-child(4n+2) .plan-art{background:#3a3025;color:var(--pastel-orange)}
+.plan-list .plan-card:nth-child(4n+3) .plan-art{background:#3a3422;color:var(--pastel-yellow)}
+.plan-list .plan-card:nth-child(4n+4) .plan-art{background:#3a2931;color:var(--pastel-pink)}
+.activity-list .activity:nth-child(4n+1) .activity-icon{background:#383125;color:var(--pastel-yellow)}
+.activity-list .activity:nth-child(4n+2) .activity-icon{background:#3a2b29;color:var(--pastel-red)}
+.activity-list .activity:nth-child(4n+3) .activity-icon{background:#3a3025;color:var(--pastel-orange)}
+.activity-list .activity:nth-child(4n+4) .activity-icon{background:#3a2931;color:var(--pastel-pink)}
+.scale-row [data-scale="sleepQuality"].active{background:var(--pastel-yellow);border-color:var(--pastel-yellow);color:#211d12}
+.scale-row [data-scale="energy"].active{background:var(--pastel-pink);border-color:var(--pastel-pink);color:#281722}
+.scale-row [data-scale="fatigue"].active{background:var(--pastel-orange);border-color:var(--pastel-orange);color:#281a12}
+.scale-row [data-scale="stress"].active{background:var(--pastel-red);border-color:var(--pastel-red);color:#291616}
+.exercise-card:nth-child(4n+1) .exercise-number{background:#3a2b29;color:var(--pastel-red)}
+.exercise-card:nth-child(4n+2) .exercise-number{background:#3a3025;color:var(--pastel-orange)}
+.exercise-card:nth-child(4n+3) .exercise-number{background:#3a3422;color:var(--pastel-yellow)}
+.exercise-card:nth-child(4n+4) .exercise-number{background:#3a2931;color:var(--pastel-pink)}
 </style>
 </head>
 <body>
