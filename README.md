@@ -11,7 +11,7 @@ App de entrenamiento mobile-first para HYROX, fuerza y running. La interfaz comb
 - Modo de sesión con carga/repeticiones por serie, marcas de series completadas, RPE, tiempo y distancia para running.
 - Historial visual con resumen semanal y filtros por HYROX, running y fuerza.
 - Check-ins de recuperación para sueño, energía, fatiga, estrés y molestias.
-- Cuentas y sincronización privada con Supabase Auth + Postgres RLS (requiere configuración; ver abajo).
+- Cuentas y sincronización privada con Supabase Auth + Postgres RLS.
 
 La presentación aplica ideas habituales de apps de entrenamiento como programas por objetivo, seguimiento de ejercicios/series y un calendario visual de actividad. El diseño propio usa fondo claro, tipografía negra y acentos verde oliva.
 
@@ -19,22 +19,21 @@ La presentación aplica ideas habituales de apps de entrenamiento como programas
 
 El sitio está conectado a Supabase. La URL del proyecto y la clave **publishable** están en el cliente web; esa clave es pública por diseño. No hay ninguna clave `secret` ni `service_role` en el código.
 
-La tabla `training_data` y sus políticas RLS están configuradas para que cada usuario solo pueda leer y modificar sus propios entrenamientos y check-ins. El registro público está desactivado; el acceso es por cuentas que crea el administrador.
+La tabla `training_data` y sus políticas RLS están configuradas para que cada usuario solo pueda leer y modificar sus propios entrenamientos y check-ins. El registro público está desactivado en Supabase; solo pueden acceder las cuentas creadas manualmente por el administrador.
 
 ### Crear una cuenta para un amigo
 
 1. En Supabase, abrí **Authentication → Users → Add user → Create new user** (no “Send invitation”, que envía un correo).
-2. Ingresá el correo de tu amigo, asignale una contraseña inicial y dejá marcado **Auto Confirm User**.
+2. Ingresá el correo de tu amigo, asignale una contraseña inicial y activá **Auto Confirm User** para confirmar la cuenta desde el panel.
 3. Pasale esa contraseña inicial por un canal privado. No la pongas en GitHub, en el código ni en este chat.
 4. Tu amigo inicia sesión en la app y toca el ícono de llave para cambiarla por una contraseña propia.
 
-Si alguien olvida su contraseña, por ahora vas a tener que restablecerla desde **Authentication → Users** en Supabase; el envío de recuperación por correo requiere configurar SMTP. El SMTP no está configurado y no hace falta para crear cuentas manualmente.
+La confirmación de email sigue activada en Supabase. Las cuentas que crees manualmente deben marcarse como confirmadas (con **Auto Confirm User**). Si alguien olvida su contraseña, por ahora vas a tener que restablecerla desde **Authentication → Users**; el envío de recuperación por correo requiere configurar SMTP. El SMTP no está configurado y no hace falta para crear cuentas manualmente.
 
 La URL del sitio está configurada en Supabase:
 
 - Sitio: `https://ballestomi02-bot.github.io/hyrox-training-system/`
 - Proveedor de acceso: correo y contraseña.
-- Confirmación de email: permanece habilitada para el registro normal; las cuentas creadas por el administrador deben marcarse como confirmadas.
 
 ## Datos y privacidad
 
