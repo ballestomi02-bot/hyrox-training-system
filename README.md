@@ -31,3 +31,14 @@ Al primer inicio de sesión, los datos legacy del navegador se importan si esa c
 ## Uso local
 
 Abrí la app desde GitHub Pages o servila en localhost con un servidor estático. Abrir el archivo directamente puede impedir que el módulo de Supabase cargue.
+
+## Instalar en iPhone
+
+La app se puede agregar a la pantalla de inicio desde Safari; no hace falta Mac ni App Store para usarla de esta manera:
+
+1. Abrí `https://ballestomi02-bot.github.io/hyrox-training-system/` en Safari del iPhone.
+2. Tocá **Compartir**.
+3. Elegí **Agregar a pantalla de inicio** y confirmá **Agregar**.
+
+Se abrirá en una ventana propia y tendrá el ícono de HYROX. La primera carga necesita conexión. La app conserva un shell básico en caché, pero iniciar sesión y sincronizar entrenamientos requiere internet.
+
