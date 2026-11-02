@@ -18,9 +18,14 @@ permissions:
   contents: read
 
 jobs:
+concurrency:
+  group: ios-simulator-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
   ios-simulator:
     name: Compile iOS simulator app
-    runs-on: macos-26
+    runs-on: macos-15
     env:
       SUPABASE_URL: ${{ vars.SUPABASE_URL }}
       SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
