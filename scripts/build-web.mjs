@@ -11,9 +11,9 @@ for (const file of ['manifest.webmanifest', 'icon.svg', 'service-worker.js']) {
 }
 
 let html = await readFile(path.join(root, 'index.html'), 'utf8');
-const remoteClient = "const {createClient}=await import('https://esm.sh/@supabase/supabase-js@2');supabase=createClient(SUPABASE_URL,SUPABASE_ANON_KEY);";
-if (!html.includes(remoteClient)) throw new Error('Could not locate Supabase client initialization in index.html');
-html = html.replace(remoteClient, 'const createClient=window.hyroxCreateClient;supabase=createClient(SUPABASE_URL,SUPABASE_ANON_KEY);');
+const clientInit = "const createClient=window.hyroxCreateClient||((await import('https://esm.sh/@supabase/supabase-js@2')).createClient);supabase=createClient(SUPABASE_URL,SUPABASE_ANON_KEY);";
+if (!html.includes(clientInit)) throw new Error('Could not locate Supabase client initialization in index.html');
+html = html.replace(clientInit, 'const createClient=window.hyroxCreateClient;supabase=createClient(SUPABASE_URL,SUPABASE_ANON_KEY);');
 const projectUrl = process.env.SUPABASE_URL?.trim();
 const publicKey = process.env.SUPABASE_ANON_KEY?.trim();
 if (projectUrl && publicKey) {
