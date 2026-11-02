@@ -32,7 +32,7 @@ La confirmación de email sigue activada en Supabase. Las cuentas que crees manu
 
 La URL del sitio está configurada en Supabase:
 
-- Sitio: `https://ballestomi02-bot.github.io/hyrox-training-system/`
+- Sitio: `https://toan-training.github.io/hyrox-training-system/`
 - Proveedor de acceso: correo y contraseña.
 
 ## Datos y privacidad
