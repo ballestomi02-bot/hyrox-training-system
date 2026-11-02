@@ -37,9 +37,9 @@ El proyecto incluye un contenedor nativo iOS basado en Capacitor y una compilaci
 
 Para preparar la compilación de la app nativa, el workflow usa GitHub Actions en macOS. Capacitor requiere macOS y Xcode para los proyectos iOS; las versiones actuales de Capacitor 8 requieren Node.js 22 y Xcode 26 o superior.
 
-La autenticación nativa usa el esquema de retorno `hyroxtraining://auth-callback`. Al configurar Supabase, agregá ese URL exacto a **Authentication → URL Configuration → Redirect URLs**. La app sigue usando credenciales públicas (Project URL y publishable/anon key); se pueden cargar como variables `SUPABASE_URL` y `SUPABASE_ANON_KEY` en GitHub Actions. No se necesita una service-role key en el teléfono.
+La autenticación nativa usa el esquema de retorno `hyroxtraining://auth-callback`. Al configurar Supabase, agregá ese URL exacto a **Authentication → URL Configuration → Redirect URLs**. La app sigue usando credenciales públicas (Project URL y publishable/anon key); cargalas como variables de repositorio en **Settings → Secrets and variables → Actions → Variables** con los nombres `SUPABASE_URL` y `SUPABASE_ANON_KEY`. La publishable/anon key no es una contraseña y puede ir como variable; nunca uses la service-role key en el teléfono ni en el frontend.
 
-El identificador de paquete `com.ballestomi02.hyroxtraining` y el nombre `HYROX Training` son provisionales. Antes de distribuir hay que confirmar un Bundle ID disponible, inscribirse en Apple Developer Program, configurar firma de distribución y App Store Connect, preparar icono/capturas definitivos y completar la revisión de Apple. La compilación de simulador no es una publicación.
+El identificador de paquete `com.ballestomi02.hyroxtraining` y el nombre `HYROX Training` son provisionales. Antes de distribuir hay que confirmar un Bundle ID disponible, inscribirse en Apple Developer Program, configurar firma de distribución y App Store Connect, preparar icono/capturas definitivos y completar la revisión de Apple. La compilación de simulador no es una publicación. El workflow aún no firma ni sube a TestFlight/App Store; no se han configurado certificados, perfiles ni credenciales de Apple.
 
 ## Versión web en iPhone
 
