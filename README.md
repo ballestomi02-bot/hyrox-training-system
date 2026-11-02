@@ -15,17 +15,19 @@ App de entrenamiento mobile-first para HYROX, fuerza y running. La interfaz comb
 
 La presentación aplica ideas habituales de apps de entrenamiento como programas por objetivo, seguimiento de ejercicios/series y un calendario visual de actividad. El diseño propio usa fondo claro, tipografía negra y acentos verde oliva.
 
-## Configurar Supabase (requerido para cuentas y nube)
+## Cuentas y sincronización en la nube
 
-1. Creá un proyecto en [Supabase](https://supabase.com/dashboard).
-2. En **SQL Editor**, ejecutá el contenido de `supabase/schema.sql`.
-3. En **Project Settings → API**, copiá la Project URL y la publishable key (o legacy anon key). Nunca uses la service_role/secret key en el navegador.
-4. En `index.html`, reemplazá `SUPABASE_URL` y `SUPABASE_ANON_KEY` por esos dos valores públicos.
-5. En **Authentication → URL Configuration**, agregá `https://ballestomi02-bot.github.io/hyrox-training-system/` en Site URL y Redirect URLs.
-6. En **Authentication → Providers → Email**, habilitá email/password. Para validar registros en producción, configurá SMTP.
-7. Publicá `index.html` en GitHub Pages. Con los placeholders actuales, registro e inicio de sesión permanecen deshabilitados.
+El sitio ya está conectado al proyecto de Supabase de HYROX Training. La URL del proyecto y su clave **publishable** están configuradas en el cliente web. Esa clave está diseñada para estar en una app pública; no se incluye ninguna clave `secret` ni `service_role`.
 
-El registro es abierto por defecto: quien tenga el enlace puede crear una cuenta. Para invitar solo a amigos, desactivá **Allow new users to sign up** en Authentication Settings y administrá las cuentas desde Supabase.
+La tabla `training_data` y sus políticas RLS están creadas. Cada persona solo puede leer y modificar la fila asociada a su propio usuario autenticado.
+
+En Supabase están habilitados el registro abierto por correo y contraseña y la confirmación de correo. La URL del sitio y el retorno de autenticación también están configurados para GitHub Pages:
+
+- Sitio: `https://ballestomi02-bot.github.io/hyrox-training-system/`
+- Registro abierto: cualquier persona con el enlace puede crear una cuenta.
+- Al registrarse, cada persona debe confirmar su correo antes de iniciar sesión.
+
+Para probarlo, abrí el sitio principal y elegí **Crear cuenta**. Si el correo de confirmación no llega o el envío se limita, configurá un proveedor SMTP propio en Supabase, en **Authentication → SMTP Settings**.
 
 ## Datos y privacidad
 
