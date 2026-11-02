@@ -1,0 +1,8 @@
+{
+  "name": "hyrox-health-steps",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "capacitor": { "ios": { "src": "ios" } }
+}

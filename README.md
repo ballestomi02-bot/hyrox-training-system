@@ -13,7 +13,7 @@ App de entrenamiento mobile-first para HYROX, fuerza y running. La interfaz comb
 - Check-ins de recuperación para sueño, energía, fatiga, estrés y molestias.
 - Cuentas y sincronización privada con Supabase Auth + Postgres RLS.
 
-La presentación aplica ideas habituales de apps de entrenamiento como programas por objetivo, seguimiento de ejercicios/series y un calendario visual de actividad. El diseño propio usa fondo claro, tipografía negra y acentos verde oliva.
+La presentación aplica ideas habituales de apps de entrenamiento como programas por objetivo, seguimiento de ejercicios/series y un calendario visual de actividad. El diseño propio usa fondo negro, tipografía clara y acentos pastel.
 
 ## Cuentas privadas por invitación
 
@@ -48,6 +48,14 @@ Para preparar la compilación de la app nativa, el workflow usa GitHub Actions e
 La autenticación nativa usa el esquema de retorno `hyroxtraining://auth-callback`. Al configurar Supabase, agregá ese URL exacto a **Authentication → URL Configuration → Redirect URLs**. La app sigue usando credenciales públicas (Project URL y publishable/anon key); cargalas como variables de repositorio en **Settings → Secrets and variables → Actions → Variables** con los nombres `SUPABASE_URL` y `SUPABASE_ANON_KEY`. La publishable/anon key no es una contraseña y puede ir como variable; nunca uses la service-role key en el teléfono ni en el frontend.
 
 El identificador de paquete `com.ballestomi02.hyroxtraining` y el nombre `HYROX Training` son provisionales. Antes de distribuir hay que confirmar un Bundle ID disponible, inscribirse en Apple Developer Program, configurar firma de distribución y App Store Connect, preparar icono/capturas definitivos y completar la revisión de Apple. La compilación de simulador no es una publicación. El workflow aún no firma ni sube a TestFlight/App Store; no se han configurado certificados, perfiles ni credenciales de Apple.
+
+## Pasos automáticos desde Apple Salud (iPhone)
+
+La app nativa puede leer el total diario de pasos de Apple Salud/Apple Watch mediante HealthKit. Solo solicita permiso de lectura de pasos cuando la persona toca **Conectar Salud**. Si ya lo autorizó, actualiza el dato al abrir la app y al volver a ella. El total queda guardado dentro del mismo registro privado `training_data` de la cuenta autenticada, protegido por RLS. No se escriben datos en Apple Salud ni se leen otros datos de salud.
+
+La versión del sitio en Safari/PWA no puede acceder directamente a Salud; allí aparece el aviso y la integración requiere instalar la app iOS nativa. El sistema conserva los registros diarios previos al iniciar sesión o cambiar de usuario, y cada persona sincroniza sus pasos con su propia cuenta.
+
+GitHub Actions compila la integración para iOS Simulator. Antes de una distribución firmada en un iPhone, el identificador de la app debe tener habilitada la capacidad HealthKit en la cuenta de Apple Developer y el perfil de firma debe incluirla. La compilación del simulador no necesita una clave de Apple ni la firma de distribución.
 
 ## Versión web en iPhone
 
