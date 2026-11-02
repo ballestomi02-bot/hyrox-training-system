@@ -1,0 +1,8 @@
+{
+  "appId": "com.ballestomi02.hyroxtraining",
+  "appName": "HYROX Training",
+  "webDir": "www",
+  "ios": {
+    "contentInset": "automatic"
+  }
+}
