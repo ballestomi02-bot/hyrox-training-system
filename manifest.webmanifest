@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "HYROX Training System",
+  "short_name": "HYROX",
+  "description": "Tu centro personal de entrenamiento HYROX, fuerza y running.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#10120f",
+  "theme_color": "#11130f",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
