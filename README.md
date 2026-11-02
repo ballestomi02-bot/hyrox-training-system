@@ -41,9 +41,9 @@ La autenticación nativa usa el esquema de retorno `hyroxtraining://auth-callbac
 
 El identificador de paquete `com.ballestomi02.hyroxtraining` y el nombre `HYROX Training` son provisionales. Antes de distribuir hay que confirmar un Bundle ID disponible, inscribirse en Apple Developer Program, configurar firma de distribución y App Store Connect, preparar icono/capturas definitivos y completar la revisión de Apple. La compilación de simulador no es una publicación.
 
-## Instalar en iPhone mientras se prepara App Store
+## Versión web en iPhone
 
-La versión web puede agregarse desde Safari con **Compartir → Agregar a pantalla de inicio**. Eso crea un acceso de pantalla de inicio; no es una descarga de App Store. Para publicar en App Store hay que empaquetar esta app para iOS, compilarla en macOS en la nube y completar el proceso de Apple Developer.
+La versión web también puede agregarse desde Safari con **Compartir → Agregar a pantalla de inicio**. Eso crea un acceso web y es distinto de la app nativa que se distribuirá por App Store.
 
 ## Referencias de producto
 
