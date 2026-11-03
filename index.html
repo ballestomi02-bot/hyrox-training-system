@@ -218,7 +218,7 @@ function kindTone(kind){return kind==='Running'?'olive':kind==='Fuerza'?'':'oliv
 function workoutById(id){return state.customWorkouts.find(x=>x.id===id)||null}
 function planById(id){return plans.find(x=>x.id===id)||null}
 function activePlan(){return planById(state.activePlanId)}
-function allRecent(){return (state.logs||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''))}
+function allRecent(){return (state.logs||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||'')||((Number(b.id)||0)-(Number(a.id)||0)))}
 function thisWeekLogs(){const ds=weekDays(),a=todayISO(ds[0]),b=todayISO(ds[6]);return state.logs.filter(x=>x.date>=a&&x.date<=b)}
 function setTab(tab){activeTab=tab;render();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(s){const el=document.getElementById('toast');el.textContent=s;el.style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.style.display='none',2300)}
