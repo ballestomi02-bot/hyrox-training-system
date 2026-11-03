@@ -61,3 +61,13 @@ La versión web también puede agregarse desde Safari con **Compartir → Agrega
 ## Referencias de producto
 
 Las funciones generales se inspiraron en patrones publicados por [Nike Training Club](https://www.nike.com/help/a/ntc-info/app), [Hevy](https://www.hevyapp.com/features/track-exercises/) y el [Training Log de Strava](https://support.strava.com/en-us/articles/15402077-training-log). No se reutilizan sus marcas ni recursos visuales.
+
+
+## Uso y actualización
+
+- Cada persona mantiene su historial y rutinas dentro de su cuenta. Las series se guardan en el dispositivo mientras entrenás y se sincronizan automáticamente cuando hay conexión.
+- El indicador de la app muestra si los datos están sincronizados, pendientes o guardados localmente por falta de conexión.
+- Desde **Historial** podés revisar el detalle, editar o eliminar un entrenamiento; los totales de Inicio se recalculan con el registro actualizado.
+- **Progreso semanal** compara sesiones, distancia y minutos con la semana anterior. Inicio muestra las sesiones registradas y el estado del check-in de recuperación.
+- Para agregarla al teléfono, abrí el sitio y elegí **Agregar a pantalla de inicio**. En iPhone, usá Safari y tocá **Compartir → Agregar a pantalla de inicio**.
+- La app consulta actualizaciones al abrirse. Si una instalación ya estaba abierta durante una publicación, cerrala y volvé a abrirla con conexión para cargar la versión nueva.
