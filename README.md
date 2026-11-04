@@ -71,3 +71,8 @@ Las funciones generales se inspiraron en patrones publicados por [Nike Training 
 - **Progreso semanal** compara sesiones, distancia y minutos con la semana anterior. Inicio muestra las sesiones registradas y el estado del check-in de recuperación.
 - Para agregarla al teléfono, abrí el sitio y elegí **Agregar a pantalla de inicio**. En iPhone, usá Safari y tocá **Compartir → Agregar a pantalla de inicio**.
 - La app consulta actualizaciones al abrirse. Si una instalación ya estaba abierta durante una publicación, cerrala y volvé a abrirla con conexión para cargar la versión nueva.
+
+
+## Recuperación de cambios pendientes
+
+Mientras una cuenta está conectada, cada cambio se conserva localmente con el identificador de esa cuenta antes de sincronizarse. Si la conexión falla o se cierra la página, al volver a abrirla la app restaura los cambios pendientes y reintenta enviarlos a Supabase. Si encuentra registros locales anteriores que no coinciden con la nube, ofrece recuperarlos para evitar que se pierdan.
